@@ -1,0 +1,105 @@
+--- 
+title: "Consumo pescados y mariscos"
+author: "ACS"
+format: dashboard
+navbar: false
+---
+
+```{r}
+#| include: false
+# load packages
+library(ggplot2)
+library(geojsonio)
+library(echarts4r)
+library(viridis)
+library(dplyr)
+library(readr)
+```
+
+
+```{r}
+#| include: false
+# read data
+consDF <- read_csv("data/consRegs.csv")
+chmap <- geojson_read("data/chgeojson.json")
+conFa <- read_csv("data/conFishAll.csv")
+conMa <- read_csv("data/conSFAll.csv")
+```
+
+
+# Inicio
+
+Texto introductorio sobre la encuesta. SECOS, etc.
+
+# Consumo mensual
+
+## Row {.tabset}
+
+### Pescado
+
+```{r}
+
+consDF |>
+  e_charts(region) |>
+  e_map_register("Chcons", chmap) |>
+  e_map(fish, map = "Chcons", nameProperty="region",name = "Consumo mensual") |>
+  e_visual_map(fish,color=viridis(9,option="F")) |>
+  e_tooltip()
+
+```
+
+### Marisco
+
+```{r}
+
+consDF |>
+  e_charts(region) |>
+  e_map_register("Chcons", chmap) |>
+  e_map(seafood, map = "Chcons", nameProperty="region",name = "Consumo mensual") |>
+  e_visual_map(seafood,color=viridis(9,option="F")) |>
+  e_tooltip()
+
+```
+
+  
+# Más consumido
+
+## Row {.tabset}
+
+### Pescado
+
+```{r}
+
+conFa |>
+  e_charts(other) |>
+  e_pie(SbjNum,radius = c("30%", "70%")) |>
+    e_tooltip(formatter = htmlwidgets::JS("
+                                        function(params){
+                                        pctrd = Math.round(params.percent)
+                                        return('<strong>' + params.name + 
+                                        '</strong><br/>total: ' + params.value + 
+                                        '<br />porcentaje: ' + pctrd)  +'%' }  "))
+
+```
+
+
+
+### Marisco
+
+```{r}
+
+conMa |>
+  e_charts(other) |>
+  e_pie(SbjNum,radius = c("30%", "70%")) |>
+    e_tooltip(formatter = htmlwidgets::JS("
+                                        function(params){
+                                        pctrd = Math.round(params.percent)
+                                        return('<strong>' + params.name + 
+                                        '</strong><br/>total: ' + params.value + 
+                                        '<br />porcentaje: ' + pctrd)  +'%' }  "))
+
+```
+
+# Restaurantes
+
+# Preferido vs. consumido

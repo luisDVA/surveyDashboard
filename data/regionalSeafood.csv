@@ -1,0 +1,96 @@
+region,SbjNum,tipo,item,pct
+Antofagasta,2,Marisco,almeja,1.3
+Atacama,1,Marisco,almeja,0.8
+Coquimbo,1,Marisco,almeja,0.6
+Valparaíso,24,Marisco,almeja,9.6
+Bío-Bío,2,Marisco,almeja,0.9
+Los Lagos,12,Marisco,almeja,9.4
+R.Metropolitana,78,Marisco,almeja,14.6
+Arica y Parinacota,3,Marisco,almeja,2.8
+Ñuble,8,Marisco,almeja,5.1
+Arica y Parinacota,1,Marisco,anchoa,0.9
+Antofagasta,1,Marisco,calamar,0.7
+Antofagasta,8,Marisco,camaron,5.3
+Atacama,10,Marisco,camaron,8.5
+Coquimbo,9,Marisco,camaron,5.7
+Valparaíso,13,Marisco,camaron,5.2
+Bío-Bío,6,Marisco,camaron,2.8
+Los Lagos,3,Marisco,camaron,2.3
+R.Metropolitana,47,Marisco,camaron,8.8
+Arica y Parinacota,3,Marisco,camaron,2.8
+Ñuble,5,Marisco,camaron,3.2
+Antofagasta,5,Marisco,chorito,3.3
+Atacama,9,Marisco,chorito,7.6
+Coquimbo,13,Marisco,chorito,8.2
+Valparaíso,39,Marisco,chorito,15.5
+Bío-Bío,50,Marisco,chorito,23.5
+Los Lagos,36,Marisco,chorito,28.1
+R.Metropolitana,72,Marisco,chorito,13.5
+Arica y Parinacota,4,Marisco,chorito,3.8
+Ñuble,49,Marisco,chorito,31
+Antofagasta,7,Marisco,choro,4.6
+Coquimbo,2,Marisco,choro,1.3
+Valparaíso,1,Marisco,choro,0.4
+Los Lagos,5,Marisco,choro,3.9
+R.Metropolitana,4,Marisco,choro,0.8
+Arica y Parinacota,6,Marisco,choro,5.7
+Los Lagos,1,Marisco,curanto,0.8
+Antofagasta,2,Marisco,erizo,1.3
+Atacama,1,Marisco,erizo,0.8
+Valparaíso,1,Marisco,erizo,0.4
+R.Metropolitana,1,Marisco,erizo,0.2
+Arica y Parinacota,2,Marisco,erizo,1.9
+Coquimbo,1,Marisco,jaiba,0.6
+Bío-Bío,1,Marisco,jaiba,0.5
+R.Metropolitana,1,Marisco,jaiba,0.2
+Ñuble,1,Marisco,jaiba,0.6
+Atacama,1,Marisco,jibia,0.8
+Valparaíso,1,Marisco,jibia,0.4
+R.Metropolitana,1,Marisco,jibia,0.2
+Valparaíso,1,Marisco,langostino,0.4
+R.Metropolitana,1,Marisco,langostino,0.2
+Antofagasta,3,Marisco,lapa,2
+Atacama,5,Marisco,lapa,4.2
+Arica y Parinacota,2,Marisco,lapa,1.9
+Antofagasta,34,Marisco,loco,22.5
+Atacama,15,Marisco,loco,12.7
+Coquimbo,16,Marisco,loco,10.1
+Valparaíso,4,Marisco,loco,1.6
+Bío-Bío,1,Marisco,loco,0.5
+Los Lagos,1,Marisco,loco,0.8
+R.Metropolitana,6,Marisco,loco,1.1
+Arica y Parinacota,13,Marisco,loco,12.3
+Ñuble,1,Marisco,loco,0.6
+Coquimbo,9,Marisco,macha,5.7
+Valparaíso,23,Marisco,macha,9.2
+Bío-Bío,21,Marisco,macha,9.9
+R.Metropolitana,15,Marisco,macha,2.8
+Arica y Parinacota,1,Marisco,macha,0.9
+Ñuble,4,Marisco,macha,2.5
+Los Lagos,2,Marisco,navajuela,1.6
+Atacama,9,Marisco,ostion,7.6
+Coquimbo,11,Marisco,ostion,7
+Valparaíso,3,Marisco,ostion,1.2
+R.Metropolitana,4,Marisco,ostion,0.8
+Los Lagos,1,Marisco,ostra,0.8
+R.Metropolitana,1,Marisco,ostra,0.2
+Los Lagos,1,Marisco,paila,0.8
+Bío-Bío,1,Marisco,picoroco,0.5
+Antofagasta,2,Marisco,piure,1.3
+Atacama,2,Marisco,piure,1.7
+Coquimbo,5,Marisco,piure,3.2
+Valparaíso,4,Marisco,piure,1.6
+Bío-Bío,8,Marisco,piure,3.8
+R.Metropolitana,1,Marisco,piure,0.2
+Arica y Parinacota,5,Marisco,piure,4.7
+Ñuble,2,Marisco,piure,1.3
+Antofagasta,2,Marisco,pulpo,1.3
+Coquimbo,3,Marisco,pulpo,1.9
+R.Metropolitana,3,Marisco,pulpo,0.6
+Coquimbo,5,Marisco,surtido,3.2
+Valparaíso,6,Marisco,surtido,2.4
+Bío-Bío,6,Marisco,surtido,2.8
+Los Lagos,1,Marisco,surtido,0.8
+R.Metropolitana,1,Marisco,surtido,0.2
+Arica y Parinacota,2,Marisco,surtido,1.9
+Ñuble,5,Marisco,surtido,3.2

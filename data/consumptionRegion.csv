@@ -1,0 +1,19 @@
+region,Mean,SD,p50,Min,Max,Category
+Antofagasta,4.035714,3.156353,3,0,15,fish
+Atacama,3.287879,2.74991,2,0,13,fish
+Coquimbo,4.317647,3.313794,4,1,17,fish
+Valparaíso,3.56391,3.418651,3,0,30,fish
+Bio Bio,3.719008,3.202143,3,0,26,fish
+Los Lagos,3.461538,3.35446,3,0,22,fish
+R. Metropolitana,3.356667,3.104014,3,0,35,fish
+Arica y Parinacota,4.092308,3.573877,3,0,17,fish
+Ñuble,3.105882,2.554285,2,0,13,fish
+Antofagasta,2.833333,2.95163,2,0,17,seafood
+Atacama,1.79661,1.954479,1,0,8,seafood
+Coquimbo,1.952381,1.802975,2,0,12,seafood
+Valparaíso,2.654135,2.820502,2,0,17,seafood
+Bio Bio,2.478632,2.768662,2,0,17,seafood
+Los Lagos,2.677419,3.212548,2,0,20,seafood
+R. Metropolitana,2.036789,2.258909,2,0,15,seafood
+Arica y Parinacota,1.938462,2.370897,2,0,15,seafood
+Ñuble,2.6125,3.111814,2,0,17,seafood

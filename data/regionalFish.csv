@@ -1,0 +1,84 @@
+region,SbjNum,tipo,item,pct
+Ñuble,27,Fish,merluza,17.1
+Ñuble,21,Fish,salmon,13.3
+Ñuble,14,Fish,jurel,8.9
+Ñuble,10,Fish,atun,6.3
+Ñuble,7,Fish,reineta,4.4
+Ñuble,2,Fish,sierra,1.3
+Ñuble,1,Fish,corvina,0.6
+Ñuble,1,Fish,sardina,0.6
+Arica y Parinacota,44,Fish,reineta,41.5
+Arica y Parinacota,6,Fish,mono,5.7
+Arica y Parinacota,2,Fish,albacora,1.9
+Arica y Parinacota,2,Fish,atun,1.9
+Arica y Parinacota,2,Fish,corvina,1.9
+Arica y Parinacota,2,Fish,jurel,1.9
+Arica y Parinacota,2,Fish,sargo,1.9
+Arica y Parinacota,1,Fish,congrio,0.9
+Arica y Parinacota,1,Fish,merluza,0.9
+Arica y Parinacota,1,Fish,pez gallo,0.9
+Arica y Parinacota,1,Fish,salmon,0.9
+R.Metropolitana,126,Fish,reineta,23.6
+R.Metropolitana,103,Fish,merluza,19.3
+R.Metropolitana,32,Fish,salmon,6
+R.Metropolitana,14,Fish,atun,2.6
+R.Metropolitana,10,Fish,jurel,1.9
+R.Metropolitana,3,Fish,congrio,0.6
+R.Metropolitana,2,Fish,corvina,0.4
+R.Metropolitana,2,Fish,tollo,0.4
+R.Metropolitana,1,Fish,bagre,0.2
+R.Metropolitana,1,Fish,pejerrey,0.2
+R.Metropolitana,1,Fish,sardina,0.2
+R.Metropolitana,1,Fish,sierra,0.2
+R.Metropolitana,1,Fish,trucha,0.2
+Los Lagos,33,Fish,salmon,25.8
+Los Lagos,25,Fish,merluza,19.5
+Los Lagos,3,Fish,atun,2.3
+Los Lagos,2,Fish,jurel,1.6
+Los Lagos,1,Fish,congrio,0.8
+Los Lagos,1,Fish,sierra,0.8
+Bío-Bío,45,Fish,merluza,21.1
+Bío-Bío,24,Fish,reineta,11.3
+Bío-Bío,21,Fish,salmon,9.9
+Bío-Bío,12,Fish,jurel,5.6
+Bío-Bío,9,Fish,atun,4.2
+Bío-Bío,4,Fish,congrio,1.9
+Bío-Bío,2,Fish,sierra,0.9
+Valparaíso,58,Fish,reineta,23.1
+Valparaíso,48,Fish,merluza,19.1
+Valparaíso,8,Fish,salmon,3.2
+Valparaíso,6,Fish,atun,2.4
+Valparaíso,5,Fish,jurel,2
+Valparaíso,3,Fish,espinel,1.2
+Valparaíso,1,Fish,sardina,0.4
+Valparaíso,1,Fish,sierra,0.4
+Valparaíso,1,Fish,trucha,0.4
+Coquimbo,46,Fish,reineta,29.1
+Coquimbo,16,Fish,jurel,10.1
+Coquimbo,11,Fish,merluza,7
+Coquimbo,4,Fish,salmon,2.5
+Coquimbo,2,Fish,blanquillo,1.3
+Coquimbo,2,Fish,congrio,1.3
+Coquimbo,1,Fish,atun,0.6
+Coquimbo,1,Fish,lenguado,0.6
+Atacama,47,Fish,reineta,39.8
+Atacama,5,Fish,albacora,4.2
+Atacama,5,Fish,atun,4.2
+Atacama,2,Fish,congrio,1.7
+Atacama,2,Fish,dorado,1.7
+Atacama,1,Fish,merluza,0.8
+Atacama,1,Fish,pangasius,0.8
+Atacama,1,Fish,salmon,0.8
+Atacama,1,Fish,tilapia,0.8
+Antofagasta,59,Fish,reineta,39.1
+Antofagasta,8,Fish,jurel,5.3
+Antofagasta,5,Fish,atun,3.3
+Antofagasta,3,Fish,cojinoa,2
+Antofagasta,2,Fish,dorado,1.3
+Antofagasta,2,Fish,merluza,1.3
+Antofagasta,1,Fish,albacora,0.7
+Antofagasta,1,Fish,congrio,0.7
+Antofagasta,1,Fish,mono,0.7
+Antofagasta,1,Fish,salmon,0.7
+Antofagasta,1,Fish,sierra,0.7
+Antofagasta,1,Fish,tollo,0.7
