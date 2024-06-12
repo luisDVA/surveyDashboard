@@ -1,7 +1,8 @@
 --- 
 title: "Consumo pescados y mariscos"
-author: "ACS"
-format: dashboard
+format: 
+  dashboard:
+    theme: lux
 navbar: false
 ---
 
@@ -14,59 +15,63 @@ library(echarts4r)
 library(viridis)
 library(dplyr)
 library(readr)
+source("R/svgsetup.R")
 ```
 
 
 ```{r}
 #| include: false
 # read data
-consDF <- read_csv("data/consRegs.csv")
+consDF <- read_csv("data/consRegs.csv") |> # mensual por región 
+  mutate(across(where(is.numeric),\(x) round(x,1)))
 chmap <- geojson_read("data/chgeojson.json")
-conFa <- read_csv("data/conFishAll.csv")
-conMa <- read_csv("data/conSFAll.csv")
+conFa <- read_csv("data/conFishAll.csv") |>
+    mutate(across(where(is.numeric),\(x) round(x,1)))
+conMa <- read_csv("data/conSFAll.csv") |>
+    mutate(across(where(is.numeric),\(x) round(x,1)))
+restCons <- read_csv("data/restCons.csv")
 ```
 
 
 # Inicio
 
-Texto introductorio sobre la encuesta. SECOS, etc.
+Texto introductorio sobre la encuesta. SECOS, ACS, etc.
 
-# Consumo mensual
+Equipo, diseño, etc.
 
-## Row {.tabset}
+# Pescado
 
-### Pescado
+## {.tabset}
+
+### Consumo mensual
 
 ```{r}
-
 consDF |>
-  e_charts(region) |>
+  e_charts(region, width = "60%") |>
   e_map_register("Chcons", chmap) |>
   e_map(fish, map = "Chcons", nameProperty="region",name = "Consumo mensual") |>
-  e_visual_map(fish,color=viridis(9,option="F")) |>
-  e_tooltip()
-
+  e_visual_map(fish,color=viridis(9,option="F"),calculable = FALSE) |>
+  e_tooltip()|>
+  e_grid(right = "-20%",left="1%")
 ```
 
-### Marisco
+
 
 ```{r}
-
 consDF |>
+  arrange(fish)|>
+  filter(!is.na(fish))|>
   e_charts(region) |>
-  e_map_register("Chcons", chmap) |>
-  e_map(seafood, map = "Chcons", nameProperty="region",name = "Consumo mensual") |>
-  e_visual_map(seafood,color=viridis(9,option="F")) |>
-  e_tooltip()
-
+  e_bar(fish,name = "Consumo mensual") |>
+  e_visual_map(fish,color=viridis(9,option="G"),show=FALSE,calculable = FALSE)|>
+  echarts4r::e_flip_coords()|>
+  e_tooltip()|>
+  e_grid(left = "45%")|>
+  e_legend(show=FALSE) 
 ```
 
-  
-# Más consumido
+### Nacional
 
-## Row {.tabset}
-
-### Pescado
 
 ```{r}
 
@@ -83,8 +88,81 @@ conFa |>
 ```
 
 
+```{r}
+fishrest <- 
+restCons %>% group_by(region) %>%  count(whereF) %>% 
+  na.omit() 
+regnums <- group_keys(fishrest) %>% mutate(regnum=9:1)
+fishrest <- left_join(fishrest,regnums) 
+fishrest$whereF <- factor(fishrest$whereF)
+fishrest$region <- factor(fishrest$region)
 
-### Marisco
+fishrest %>% 
+e_charts(whereF)|>
+  e_scatter(regnum,n,symbol = restpath,symbol_size = 1.5)|>
+  e_legend(show=FALSE) |>
+  e_y_axis(interval=1,axisLabel=list(formatter= htmlwidgets::JS("
+            function (val,index) {
+            var regs = ['Antofagasta','Arica y Parinacota','Atacama','Bío-Bío','Coquimbo','Los Lagos','Ñuble','Región Metropolitana de Santiago','Valparaíso',''];
+            var revregs = regs.reverse();
+            return revregs[index];
+                         }")),max=9,offset=12,
+           axisLine=list(show=FALSE),axisTick=list(show=FALSE)) |> 
+  e_grid(left=220,right=15)|>
+  e_tooltip(formatter=htmlwidgets::JS("
+      function(params){
+        return('n = ' +  params.value[2])
+      }
+    "))
+```
+
+
+### Región
+
+<iframe width="100%" height="529" frameborder="0"
+  src="https://observablehq.com/embed/23d8f79680ff8968@236?cells=ptitle%2Ccompositeplt%2Cdropdownbx"></iframe>
+
+
+
+### Preferido vs. consumido
+
+Pref vs. consumed
+
+# Mariscos
+
+## {.tabset }
+
+
+### Consumo mensual
+
+
+```{r}
+consDF |>
+  e_charts(region, width = "60%") |>
+  e_map_register("Chcons", chmap) |>
+  e_map(seafood, map = "Chcons", nameProperty="region",name = "Consumo mensual") |>
+  e_visual_map(seafood,color=viridis(9,option="F"),calculable = FALSE) |>
+  e_tooltip()|>
+  e_grid(right = "-20%",left="1%")
+```
+
+
+
+```{r}
+consDF |>
+  arrange(seafood)|>
+  filter(!is.na(seafood))|>
+  e_charts(region) |>
+  e_bar(seafood,name = "Consumo mensual") |>
+  e_visual_map(seafood,color=viridis(9,option="G"),show=FALSE,calculable = FALSE)|>
+  echarts4r::e_flip_coords()|>
+  e_tooltip()|>
+  e_grid(left = "45%")|>
+  e_legend(show=FALSE) 
+```
+
+
+### Nacional
 
 ```{r}
 
@@ -100,6 +178,42 @@ conMa |>
 
 ```
 
-# Restaurantes
 
-# Preferido vs. consumido
+```{r}
+SFrest <- 
+restCons %>% group_by(region) %>%  count(whereS) %>% 
+  na.omit() 
+regnumsSF <- group_keys(SFrest) %>% mutate(regnum=9:1)
+SFrest <- left_join(SFrest,regnumsSF) 
+SFrest$whereF <- factor(SFrest$whereS)
+SFrest$region <- factor(SFrest$region)
+
+SFrest %>% 
+e_charts(whereS)|>
+  e_scatter(regnum,n,symbol = restpath,symbol_size = 1.5)|>
+  e_legend(show=FALSE) |>
+  e_y_axis(interval=1,axisLabel=list(formatter= htmlwidgets::JS("
+            function (val,index) {
+            var regs = ['Antofagasta','Arica y Parinacota','Atacama','Bío-Bío','Coquimbo','Los Lagos','Ñuble','Región Metropolitana de Santiago','Valparaíso',''];
+            var revregs = regs.reverse();
+            return revregs[index];
+                         }")),max=9,offset=12,
+           axisLine=list(show=FALSE),axisTick=list(show=FALSE)) |> 
+  e_grid(left=220,right=15)|>
+  e_tooltip(formatter=htmlwidgets::JS("
+      function(params){
+        return('n = ' +  params.value[2])
+      }
+    "))
+```
+
+
+
+### Región
+
+el mapa
+
+### Preferido vs. consumido
+
+algo
+
